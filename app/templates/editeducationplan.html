@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="p-4 mx-5">Редактирование учебного плана</h2>
+
+<form method="post" action="/editeducationplan/{{ educationplan.id }}">
+    <div class="container">
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Специальность</label>
+            <input type="text" class="form-control" id="speciality" name="speciality" value="{{ educationplan.speciality }}">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Дисциплина</label>
+            <input type="text" class="form-control" id="discipline" name="discipline" value="{{ educationplan.discipline }}">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Семестр</label>
+            <input type="text" class="form-control" id="semester" name="semester" value="{{ educationplan.semester }}">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Число часов</label>
+            <input type="text" class="form-control" id="hours" name="hours" value="{{ educationplan.hours }}">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Форма отчетности</label>
+            <input type="text" class="form-control" id="exam_or_test" name="exam_or_test" value="{{ educationplan.exam_or_test }}">
+        </div>
+    </div>
+
+    <div class="px-2 pt-3">
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>
+
+{% endblock %}

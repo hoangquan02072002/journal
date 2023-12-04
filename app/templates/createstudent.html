@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="p-4 mx-5">Добавление студента</h2>
+
+<form method="post" action="/createstudent">
+    <div class="container">
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Имя</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Фамилия</label>
+            <input type="text" class="form-control" id="lastname" name="lastname">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Отчество</label>
+            <input type="text" class="form-control" id="surname" name="surname">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Год поступления</label>
+            <input type="text" class="form-control" id="admission_year" name="admission_year">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Форма обучения</label>
+            <input type="text" class="form-control" id="education_form" name="education_form">
+        </div>
+        <div class="row mb-3 input-group">
+            <label for="name" class="col-sm-2 col-form-label">Группа</label>
+            <input type="text" class="form-control" id="group" name="group">
+        </div>
+    </div>
+
+    <div class="px-2 pt-3">
+        <button type="submit" class="btn btn-primary">Добавить</button>
+    </div>
+</form>
+
+{% endblock %}

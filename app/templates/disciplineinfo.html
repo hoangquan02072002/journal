@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="p-4 mx-5">Информация  о дисциплинах</h2>
+
+<div class="container ">
+    <form method="post" action="/disciplineinfo">
+        <p>Впишите нужную дисциплину</p>
+        <input type="text" name="discipline_name">
+        <button type="submit">Отправить</button>
+
+        {% if hours %}
+            <p>Количество часов по предмету {{ selected_discipline }}: "{{ hours }}", и форма отчетности по нему {{ otchet }}.</p>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}

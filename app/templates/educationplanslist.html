@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row p-4 mx-5">
+    <h2 class="col-10">Список учебных планов</h2>
+    <a class="btn btn-primary col-2" href="{{ url_for('createeducationplan') }}">Добавить учебный план</a>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    №
+                </th>
+                <th>
+                    Специальность
+                </th>
+                <th>
+                    Дисциплина
+                </th>
+                <th>
+                    Семестр
+                </th>
+                <th>
+                    Число часов
+                </th>
+                <th>
+                    Форма отчетности
+                </th>
+                <th>
+                    Действие
+                </th>
+            </tr>        
+        </thead>
+        <tbody>
+            {% for educationplan in educationplans %}
+            <tr>    
+                <td>
+                    {{ educationplan.id }}
+                </td>
+                <td>
+                    {{ educationplan.speciality }}
+                </td>
+                <td>
+                    {{ educationplan.discipline }}
+                </td>
+                <td>
+                    {{ educationplan.semester }}
+                </td>
+                <td>
+                    {{ educationplan.hours }}
+                </td>
+                <td>
+                    {{ educationplan.exam_or_test }}
+                </td>
+                <th>
+                    <a class="btn btn-primary" href="{{ url_for('editeducationplan', id=educationplan.id) }}">Редактировать</a>
+                </th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

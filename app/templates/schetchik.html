@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="p-4 mx-5">Счетчик студентов</h2>
+
+<div class="container">
+    <form method="post" action="/schetchik">
+        <p>Выберите форму обучеия</p>
+        <select name="select_form">
+            <option name="дневная">дневная</option>
+            <option name="вечерняя">вечерняя</option>
+            <option name="заочная">заочная</option>
+        </select>
+        <button type="submit">Отправить</button>
+    </form>
+    {% if student_count %}
+        <p>Количество студентов "{{ form_of_educ }}" формы: {{ student_count }}</p>
+    {% endif %}
+</div>
+
+{% endblock %}
