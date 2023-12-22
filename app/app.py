@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 import os
 
-
+# branch 
 app = Flask(__name__)
 application = app
 
